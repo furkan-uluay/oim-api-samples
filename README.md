@@ -51,7 +51,7 @@ according to your OIM environment.
 
 
 
-##Usage
+## Usage
 To call OIM API's from client, OIMClient instance must be created before API's calls.  
 
     ExternalOimClient externalOimClient = new ExternalOimClient();
