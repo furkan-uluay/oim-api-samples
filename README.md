@@ -16,7 +16,7 @@ Project contains following operations:
 * Process Form Operations
 * Reconciliation Operations
 * Role Operations
-* Scheduler Jon Operations
+* Scheduler Job Operations
 * User Operations
 
 
@@ -40,8 +40,7 @@ Following jars are located under OIM installation folder
 
 ## Configuration
 To call OIM API's from client, IP adress, username(xelsysadm), password and authwl.conf path must be set in 
-`ExternalOimClient.class.getOimClient()`
-according to your OIM environment.
+`ExternalOimClient.class.setOimClient()` method according to your OIM environment.
 
       serverURL = "<ip_adress>:14000";
       username = "xelsysadm";
@@ -55,4 +54,4 @@ according to your OIM environment.
 To call OIM API's from client, OIMClient instance must be created before API's calls.  
 
     ExternalOimClient externalOimClient = new ExternalOimClient();
-    OIMClient oimClient = externalOimClient.getOimClient(ExternalOimClient.Environment.DEV);
+    OIMClient oimClient = externalOimClient.setOimClient(ExternalOimClient.Environment.DEV);

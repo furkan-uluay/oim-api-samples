@@ -16,13 +16,13 @@ public class ExternalOimClient {
   }
 
 
-  public OIMClient getOimClient(Environment environment) throws Exception {
+  public OIMClient setOimClient(Environment environment) throws Exception {
     System.out.println("Creating client....");
     System.out.println("Environment: " + environment);
-    String ctxFactory = null;
-    String serverURL = null;
-    String username = null;
-    char[] password = null;
+    String ctxFactory;
+    String serverURL;
+    String username;
+    char[] password;
     if (environment.toString().equalsIgnoreCase("DEV")) {
 
       ctxFactory = "weblogic.jndi.WLInitialContextFactory";
@@ -38,7 +38,7 @@ public class ExternalOimClient {
     } else {
       throw new Exception("Environment Error");
     }
-    System.out.println("OimClient from: " + System.getProperty("environment") + " -- URL:" + serverURL);
+    System.out.println("OimClient from: " +  environment + " -- URL:" + serverURL);
     String authwlPath = "C:\\design_console\\config\\authwl.conf";
     Hashtable<String, String> env = new Hashtable<String, String>();
     env.put(OIMClient.JAVA_NAMING_FACTORY_INITIAL, ctxFactory);
@@ -55,6 +55,6 @@ public class ExternalOimClient {
     this.oimClient.login(username, password);
     System.out.println("Log in successful");
 
-    return this.oimClient;
+    return oimClient;
   }
 }

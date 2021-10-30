@@ -13,11 +13,12 @@ import java.util.HashMap;
 public class Samples {
   public static void main(String[] args) throws Exception {
     ExternalOimClient externalOimClient = new ExternalOimClient();
-    externalOimClient.getOimClient(ExternalOimClient.Environment.DEV);
+    externalOimClient.setOimClient(ExternalOimClient.Environment.DEV);
 
     Samples samples = new Samples();
 
-    samples.createUser();;
+    samples.createUser();
+
 
     User user = samples.getUSer("TestUser");
 
